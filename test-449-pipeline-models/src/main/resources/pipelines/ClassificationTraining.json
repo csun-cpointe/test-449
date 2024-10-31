@@ -1,0 +1,20 @@
+{
+	"name": "ClassificationTraining",
+	"package": "com.boozallen.nlpri",
+	"type": {
+		"name": "machine-learning",
+		"implementation": "machine-learning-mlflow",
+		"versioning": {
+			"enabled": false
+		}
+	},
+	"steps": [
+		{
+			"name": "LogisticTraining",
+			"type": "training",
+            "modelLineage": {
+                "enabled": true
+            }
+        }
+	]
+}

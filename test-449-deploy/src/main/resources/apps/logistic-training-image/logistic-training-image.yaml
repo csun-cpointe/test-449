@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: no-op-test-449-logistic-training
+  namespace: default
+spec:
+  backoffLimit: 0
+  template:
+    spec:
+      containers:
+      - name: no-op
+        image: test-449-logistic-training-docker
+        env:
+        - name: MODE
+          value: "no-op"
+      restartPolicy: Never

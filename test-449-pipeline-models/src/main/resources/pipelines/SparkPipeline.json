@@ -1,0 +1,25 @@
+{
+  "name": "SparkPipeline",
+  "package": "com.boozallen",
+  "type": {
+    "name": "data-flow",
+    "implementation": "data-delivery-spark"
+  },
+  "dataLineage": true,
+  "steps": [
+    {
+      "name": "Step1",
+      "type": "synchronous",
+      "persist": {
+        "type": "hive"
+      }
+    },
+    {
+      "name": "Step2",
+      "type": "asynchronous",
+      "persist": {
+        "type": "hive"
+      }
+    }
+  ]
+}

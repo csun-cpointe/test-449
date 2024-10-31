@@ -1,0 +1,34 @@
+{
+  "name": "PythonPipeline",
+  "package": "validation.test.project.pipeline",
+  "type": {
+    "name": "data-flow",
+    "implementation": "data-delivery-pyspark"
+  },
+  "dataLineage": true,
+  "steps": [
+    {
+      "name": "Step1",
+      "type": "synchronous",
+      "persist": {
+        "type": "delta-lake"
+      },
+      "alerting": {
+        "enabled": false
+      },
+      "provenance": {
+        "enabled": false
+      }
+    },
+    {
+      "name": "Step2",
+      "type": "asynchronous",
+      "alerting": {
+        "enabled": false
+      },
+      "provenance": {
+        "enabled": true
+      }
+    }
+  ]
+}
